@@ -1,0 +1,13 @@
+.ChatHomePage{
+    display: flex;
+}
+.ChatHomePage{
+    height: 100%;
+    overflow: hidden;
+}
+.ChatView{
+    width: 100%;
+}
+.profileAndChatList{
+    border-right: solid 2px white;
+}

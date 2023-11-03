@@ -1,0 +1,56 @@
+.noData{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../res/Background1.jpg);
+}
+.noData img{
+    background-color: white;
+    height: 24em;
+    border-radius: 5%;
+    transform: rotate(340deg);
+}
+.ChatListView{
+    width: 100%;
+}
+
+.ChatViewprofile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right{
+    flex:3;
+    display:flex;
+    justify-content: end;
+}
+/* .profileLeftSide{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+} */
+.message-input{
+    margin-bottom: 4em;
+    
+    align-items: center;
+    background-color: #008b8b;
+    display: flex;
+}
+.react-input-emoji--button{
+    display: flex !important;
+    align-items: center;
+}
+.react-input-emoji--button svg{
+    fill:white;
+}
+.react-input-emoji--container{
+    border-radius: 5px !important;
+}
+.ChatView{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

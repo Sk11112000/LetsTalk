@@ -1,0 +1,53 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.navList
+{
+    padding: 1em;
+    
+}
+.link{
+    color:gray;
+    margin-right: 1em;
+    
+}
+.link:hover{
+    color: black;
+}
+.MobileView{
+    display: none;
+}
+@media (max-width:700px) {
+    .navList{
+        display: none;
+    }
+   .MobileView{
+    padding: 2em;
+    align-self: center;
+        display: flex;
+        
+   }
+   .MobileViewList{
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+   }
+   .navListMobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .mobileLink{
+    color: gray;
+    align-items: center;
+    padding: 1em;
+   }
+   .mobileLink:hover{
+    
+        color: aliceblue;
+   }
+}

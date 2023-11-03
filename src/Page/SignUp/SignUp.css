@@ -1,0 +1,27 @@
+.LoginHeader{
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: xx-large;
+    font-family: fangsong;
+}
+.top
+{   
+    background-image: url("../../res/Background1.jpg");
+}
+
+.PhoneInputCountrySelect{
+    width: 5em;
+    
+}
+.PhoneInput{
+    display: flex;
+    height: 2em;
+}
+.PhoneInputCountryIconImg{
+    height: 1.5em;
+}
+.PhoneInputInput{
+    width: 100%;
+}

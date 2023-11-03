@@ -1,0 +1,35 @@
+ 
+  .SigUpProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .menuButtonSpan {
+    height: 10em;
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    background-color: rgba(0, 0, 0,0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%; 
+    cursor: pointer;
+    width: 100%; 
+    transform: translateX(0); 
+  }
+  .image-div {
+    margin-bottom: 3em;
+    position: relative;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .top {
+      flex-direction: column;
+    }
+  }
+ .MuiSvgIcon-root{
+  color: black;
+ }
