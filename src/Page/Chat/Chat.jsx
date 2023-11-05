@@ -6,11 +6,30 @@ import './Chat.css'
 import searchIcon from '../../res/search.svg';
 import './ChatList.css';
 import { SearchIcon } from '@chakra-ui/icons';
-import { Avatar, Box, Input, InputGroup, InputRightAddon } from '@chakra-ui/react';
+import { Avatar, Box, Input, InputGroup, InputRightAddon,Spinner } from '@chakra-ui/react';
 import { useCallback } from 'react';
+const SpinnerComponent = () => (
+  <div className="spinner-container">
+    <Spinner size="xl" color="blue.500" thickness="4px" speed="0.65s" />
+  </div>
+);
 
 const Chat = () => {
-  const [memberData,setMemberData]=useState({});
+  const userInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+  
+
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      const storedUserInfo = JSON.parse(sessionStorage.getItem('userInfo'));
+      if (storedUserInfo) {
+        
+        setIsLoading(false);
+      }
+    }, 5000);
+  }, []);
+
+   const [memberData,setMemberData]=useState({});
   const List = ({ member }) => {
     
     // const latestMessageTime =
@@ -47,7 +66,7 @@ const ChatList = useCallback(()=>{
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const querySnapshot = await firestore.collection('users').where('id','!=',(JSON.parse(sessionStorage.getItem("userInfo"))).id).get();
+          const querySnapshot = await firestore.collection('users').where('id','!=',(userInfo.id)).get();
           let userList = [];
           querySnapshot.forEach((doc) => {
             userList.push(doc.data());
@@ -99,21 +118,25 @@ const ChatList = useCallback(()=>{
 
  },{})
   return (
-   <>
-   <div className='ChatHomePage'>
-    <div className='profileAndChatList'>
-      <div className='profile'>
-        <Profile image=""/>
+    <>
+    {isLoading ? (
+      <SpinnerComponent />
+    ) : (
+      <div className='ChatHomePage'>
+        <div className='profileAndChatList'>
+          <div className='profile'>
+            <Profile image={userInfo.image}/>
+          </div>
+          <div className='chatList'>
+            <ChatList/>
+          </div>
+        </div>
+        <div className='ChatView'>
+          <ChatView memberData={memberData}/>
+        </div>
       </div>
-      <div className='chatList'>
-        <ChatList/>
-      </div>
-    </div>
-    <div className='ChatView'>
-      <ChatView memberData={memberData}/>
-    </div>
-    </div>
-    </>
+    )}
+  </>
   )
 };
 

@@ -22,7 +22,7 @@ import { Search2Icon,AddIcon } from '@chakra-ui/icons';
 import ChatRoom from './ChatRoom';
 
 const ChatView = ({ memberData }) => {
-  
+  const [message,setMessage]=useState("");
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
 
@@ -40,6 +40,7 @@ const ChatView = ({ memberData }) => {
   };
   const handleSendMessage = (text) => {
     if (text.trim() !== '') {
+      setMessage(text);
       const newMessages = [...messages, { text, sender: 'user' }];
       setMessages(newMessages);
       setNewMessage('');
@@ -78,7 +79,7 @@ const ChatView = ({ memberData }) => {
           </Flex>
         </Box>
         <div>
-       <ChatRoom senderId={(JSON.parse(sessionStorage.getItem('userInfo'))).id} receiverId={memberData.id} newMessage={messages}/>
+       <ChatRoom senderId={(JSON.parse(sessionStorage.getItem('userInfo'))).id} receiverId={memberData.id} message={message}/>
 
         <div className="message-input">
         <Button ml={1} colorScheme='teal' variant='solid'>

@@ -17,6 +17,7 @@ import { useToast } from '@chakra-ui/react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import './Login.css';
+import { createContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import MyTextInput from '../../Component/MyTextInput';
 import Header from '../../Component/Header';
@@ -24,10 +25,10 @@ import Header from '../../Component/Header';
 const Login = () => {
   const navigate = useNavigate(); // Initialize navigate
   const toast = useToast();
-  
+
 
   const handleSubmit = async (values) => {
-    
+
     try {
      
       const userCredential = await Auth.signInWithEmailAndPassword(
@@ -48,7 +49,7 @@ const Login = () => {
           .then( (doc) => {
             if (doc.exists) {
 
-              const currentUserData=doc.data();
+               const currentUserData=doc.data();
              sessionStorage.setItem("userInfo",JSON.stringify(currentUserData));
             
             } else {
