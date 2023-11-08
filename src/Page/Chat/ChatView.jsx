@@ -79,23 +79,9 @@ const ChatView = ({ memberData }) => {
           </Flex>
         </Box>
         <div>
-       <ChatRoom senderId={(JSON.parse(sessionStorage.getItem('userInfo'))).id} receiverId={memberData.id} message={message}/>
+       <ChatRoom senderId={(JSON.parse(sessionStorage.getItem('userInfo'))).id} receiverId={memberData.id}/>
 
-        <div className="message-input">
-        <Button ml={1} colorScheme='teal' variant='solid'>
-          <AddIcon/>
-        </Button>
-          <InputGroup size="sm">
-            <InputEmoji
-              value={newMessage}
-              cleanOnEnter
-              onEnter={handleSendMessage}
-              placeholder="Type your message..."
-            />
-            </InputGroup>
-            
-         
-        </div>
+
         </div>
       </>
     );

@@ -18,7 +18,7 @@
 
 .ChatViewprofile{
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
 }
 
@@ -32,25 +32,4 @@
     display: flex;
     justify-content: space-between;
 } */
-.message-input{
-    margin-bottom: 4em;
-    
-    align-items: center;
-    background-color: #008b8b;
-    display: flex;
-}
-.react-input-emoji--button{
-    display: flex !important;
-    align-items: center;
-}
-.react-input-emoji--button svg{
-    fill:white;
-}
-.react-input-emoji--container{
-    border-radius: 5px !important;
-}
-.ChatView{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
